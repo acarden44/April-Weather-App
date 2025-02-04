@@ -19,6 +19,9 @@ a {
 header {
   border-bottom: 1px solid #f9f7fe;
   padding-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .search-input {
@@ -26,8 +29,8 @@ header {
   border: none;
   color: rgba(39, 33, 66, 0.4);
   font-size: 16px;
-  padding: 20px;
-  width: 75%;
+  padding: 15px;
+  width: 70%;
   border-radius: 6px;
 }
 
@@ -37,22 +40,25 @@ header {
   background-color: #885df1;
   color: white;
   border: none;
-  padding: 20px;
+  padding: 15px 20px;
   line-height: 1;
   border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.search-button:hover {
+  background-color: #6e49c2;
 }
 
 main {
   padding: 30px 0;
 }
 
-.current-temperature {
-  font-size: 48px;
-}
-
 .current-weather {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .current-city {
@@ -60,8 +66,9 @@ main {
   font-weight: 900;
   margin: 0;
 }
+
 .current-details {
-  color: rgba(39, 33, 66, 0.4);
+  color: rgba(39, 33, 66, 0.6);
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
@@ -71,10 +78,14 @@ main {
   color: #f65282;
 }
 
+.current-temperature {
+  display: flex;
+  align-items: center;
+  font-size: 48px;
+}
+
 .current-temperature-icon {
-  position: relative;
-  top: -8px;
-  font-size: 40px;
+  font-size: 50px;
   margin-right: 10px;
 }
 
@@ -86,13 +97,55 @@ main {
 .current-temperature-unit {
   font-size: 28px;
   position: relative;
-  top: -38px;
+  top: -10px;
+}
+
+/* Toggle switch for temperature unit */
+.unit-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.unit-toggle input {
+  display: none;
+}
+
+.unit-toggle label {
+  background: #ddd;
+  border-radius: 20px;
+  width: 50px;
+  height: 24px;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.unit-toggle label:after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+  top: 2px;
+  left: 2px;
+  transition: all 0.3s ease;
+}
+
+.unit-toggle input:checked + label {
+  background: #885df1;
+}
+
+.unit-toggle input:checked + label:after {
+  left: 26px;
 }
 
 footer {
   border-top: 1px solid #f9f7fe;
   text-align: center;
   padding-top: 15px;
-
   color: rgba(39, 33, 66, 0.4);
 }
