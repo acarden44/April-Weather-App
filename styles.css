@@ -19,8 +19,10 @@ a {
 header {
   border-bottom: 1px solid #f9f7fe;
   padding-bottom: 30px;
+}
+
+.search-form {
   display: flex;
-  flex-direction: column;
   align-items: center;
 }
 
@@ -29,8 +31,8 @@ header {
   border: none;
   color: rgba(39, 33, 66, 0.4);
   font-size: 16px;
-  padding: 15px;
-  width: 70%;
+  padding: 20px;
+  width: 75%;
   border-radius: 6px;
 }
 
@@ -40,25 +42,37 @@ header {
   background-color: #885df1;
   color: white;
   border: none;
-  padding: 15px 20px;
+  padding: 20px;
   line-height: 1;
   border-radius: 5px;
-  cursor: pointer;
-  transition: background 0.3s ease;
 }
 
-.search-button:hover {
-  background-color: #6e49c2;
+.toggle-container {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.unit-toggle {
+  background-color: #f65282;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 main {
   padding: 30px 0;
 }
 
+.current-temperature {
+  font-size: 48px;
+}
+
 .current-weather {
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 
 .current-city {
@@ -68,7 +82,7 @@ main {
 }
 
 .current-details {
-  color: rgba(39, 33, 66, 0.6);
+  color: rgba(39, 33, 66, 0.4);
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
@@ -78,14 +92,10 @@ main {
   color: #f65282;
 }
 
-.current-temperature {
-  display: flex;
-  align-items: center;
-  font-size: 48px;
-}
-
 .current-temperature-icon {
-  font-size: 50px;
+  position: relative;
+  top: -8px;
+  font-size: 40px;
   margin-right: 10px;
 }
 
@@ -97,50 +107,7 @@ main {
 .current-temperature-unit {
   font-size: 28px;
   position: relative;
-  top: -10px;
-}
-
-/* Toggle switch for temperature unit */
-.unit-toggle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 15px;
-  font-size: 14px;
-}
-
-.unit-toggle input {
-  display: none;
-}
-
-.unit-toggle label {
-  background: #ddd;
-  border-radius: 20px;
-  width: 50px;
-  height: 24px;
-  position: relative;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.unit-toggle label:after {
-  content: "";
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  background: white;
-  border-radius: 50%;
-  top: 2px;
-  left: 2px;
-  transition: all 0.3s ease;
-}
-
-.unit-toggle input:checked + label {
-  background: #885df1;
-}
-
-.unit-toggle input:checked + label:after {
-  left: 26px;
+  top: -38px;
 }
 
 footer {
